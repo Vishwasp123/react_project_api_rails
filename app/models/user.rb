@@ -1,18 +1,25 @@
 class User < ApplicationRecord
 
 	has_secure_password
-    before_validation :downcase_email
+  before_validation :downcase_email
 
 	before_validation :normalize_phone_number
 
-	validates  :phone_number , presence: true 
-    validate :phone_number_validation
-    validates :email, presence: true, 
+	validates :email, presence: true, 
             uniqueness: { case_sensitive: false }, 
             format: {
               with: URI::MailTo::EMAIL_REGEXP,
               message: "is not a valid email"
             }
+
+  validates  :username,:phone_number , presence: true , if: :normal_signup?
+  validates :password, presence: true, if: :normal_signup?
+  validate :phone_number_validation, if: :normal_signup?
+
+  def normal_signup?
+    provider.blank?
+  end 
+
     
 
 

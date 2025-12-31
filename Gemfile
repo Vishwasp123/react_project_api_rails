@@ -85,6 +85,16 @@ gem 'active_model_serializers', '~> 0.10.12'
 gem 'phonelib' # this gem use for countrycode phone number
 gem 'dotenv-rails', groups: [:development, :test]
 # gem 'letter_opener'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
+# Gemfile
+# gem "google-id-token", "~> 1.6" #user update gem 
+
+
+
  
 
 

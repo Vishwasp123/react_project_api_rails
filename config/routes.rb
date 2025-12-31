@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   post 'forgot_password', to: 'auth#forgot_password'
   post 'reset_password', to: 'auth#reset_password'
 
+  #Google_login
+  post 'google_login', to: "google_auth#google_login"
+
   #user routes 
   patch 'update', to: 'users#update'
   get 'all_users', to: 'users#index'
