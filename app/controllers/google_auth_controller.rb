@@ -43,7 +43,6 @@ class GoogleAuthController < ApplicationController
   end
 
   def valid_audience?(payload)
-  	byebug
     payload["aud"] == ENV["GOOGLE_CLIENT_ID"] ||
       payload["azp"] == ENV["GOOGLE_CLIENT_ID"]
   end
