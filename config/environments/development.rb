@@ -73,7 +73,9 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
 
+  # config.log_level = :warn
 
+  config.action_mailer.logger = nil #mailer not show in server(log) useing this 
   config.action_controller.raise_on_missing_callback_actions = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true

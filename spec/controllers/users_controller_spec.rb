@@ -114,15 +114,17 @@ RSpec.describe UsersController, type: :controller do
           }
         }
         json = JSON.parse(response.body)
-
         expect(json["errors"][0]).to eq("User not found")
       end
 
       it "valid user update details" do  
+        
         request.headers['token'] = @jwt_token 
 
-        patch :update, params: {user: {username: "Vishwas"}, token: @jwt_token}
+        patch :update, params: {user: {username: "Vishwas", password: "123456"}, token: @jwt_token}
+        
         json = JSON.parse(response.body)
+        
         expect(json["message"]).to eq("User update suceefully")
       end 
     end 

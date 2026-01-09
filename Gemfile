@@ -48,7 +48,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 6.1.0'
+  gem 'rspec-rails'
   gem 'simplecov', require: false 
   gem 'simplecov-json', require: false 
 end
@@ -79,12 +79,24 @@ gem 'devise-jwt'
 gem 'jwt'
 gem 'rack-cors' 
 
-gem 'active_model_serializers', '~> 0.10.12'
+gem 'active_model_serializers'
 
  
 gem 'phonelib' # this gem use for countrycode phone number
 gem 'dotenv-rails', groups: [:development, :test]
 # gem 'letter_opener'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
+
+gem 'countries'
+
+
+
+
+
  
 
 

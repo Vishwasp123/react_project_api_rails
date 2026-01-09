@@ -71,6 +71,7 @@ class UsersController < ApplicationController
 	    :password,
 	    :password_confirmation,
 	    :username,
+      :country_code,
       :phone_number
 	  )
   end
