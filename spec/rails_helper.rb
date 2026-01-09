@@ -41,7 +41,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   # config.use_transactional_fixtures = true
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
   config.infer_spec_type_from_file_location!
 
@@ -52,22 +52,7 @@ RSpec.configure do |config|
   
 
 
-  config.before(:suite) do
-    
-     DatabaseCleaner.clean_with(:deletion) # Clean the database before the suite runs
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+  
 
   # Disable Rails's built-in transactional fixtures if you use database_cleaner
   

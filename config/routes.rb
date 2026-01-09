@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   #Google_login
   post 'google_login', to: "google_auth#google_login"
+  post 'facebook_login', to: "facebook_auth#facebook_login"
 
   #user routes 
   patch 'update', to: 'users#update'
