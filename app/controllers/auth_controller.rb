@@ -41,7 +41,6 @@ class AuthController < ApplicationController
 	end
 
 	def forgot_password
-		
 	  @user = User.find_by(email: params[:email])
 	  
 	  if @user

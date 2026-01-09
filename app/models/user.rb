@@ -41,8 +41,11 @@ class User < ApplicationRecord
 
   #forgot passssword ke time token generate 
   def generate_reset_token
-    update!(reset_token: SecureRandom.hex(20))
-  end 
+    
+    token = SecureRandom.hex(20)
+    update_column(:reset_token, token)
+    token
+  end
 
   private 
 
