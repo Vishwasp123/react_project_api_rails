@@ -47,7 +47,6 @@ class FacebookAuthController < ApplicationController
 	end
 
 	def find_or_create_facebook_user(payload)
-		byebug
 		
 		user = User.find_by(provider: "facebook", uid:  payload["id"])
 		
